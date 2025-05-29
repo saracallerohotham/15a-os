@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-family: "Great Vibes", cursive;
+  font-weight: 400; /* más fina */
+  font-size: 3.5rem; /* un poco más grande */
+  letter-spacing: 0.05em; /* separa un poco las letras */
+  line-height: 1.3; /* espacio vertical */
+  background-color: #ffb6c1;
+  color: #111;
+  scroll-behavior: smooth;
+}
+
+/* Portada */
+.portada {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffb6c1;
+  margin-top: 160px;
+  height: calc(100vh - 80px);
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.portada-img {
+  width: 100%;
+  max-width: 600px;
+  object-fit: cover;
+}
+
+/* Fecha con estilo */
+.fecha-container {
+  position: absolute;
+  top: calc(50% + 150px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  user-select: none;
+}
+
+.titulo-cuando {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.4rem;
+  color: #222;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 2px rgba(255, 182, 193, 0.5);
+}
+
+/* Sección de invitación */
+.invitacion {
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 9999;
+}
+
+.subtitulo {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-family: "Great Vibes", cursive;
+  color: #222;
+}
+
+/* Contador */
+.contador {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 9999;
+}
+
+.unidad {
+  background-color: #111;
+  color: #fff;
+  width: 80px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 6px 0 #333;
+  font-family: "Anton", sans-serif;
+  transition: transform 0.3s;
+}
+
+.unidad:hover {
+  transform: translateY(-5px);
+}
+
+.numero {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.etiqueta {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .unidad {
+    width: 70px;
+    height: 90px;
+  }
+
+  .numero {
+    font-size: 1.5rem;
+  }
+
+  .etiqueta {
+    font-size: 0.8rem;
+  }
+
+  .subtitulo {
+    font-size: 1.2rem;
+  }
+}
