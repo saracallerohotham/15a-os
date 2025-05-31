@@ -1,73 +1,69 @@
+:root {
+  --font-primary: "Great Vibes", cursive;
+  --font-secondary: "Anton", sans-serif;
+  --color-bg: #ffb6c1;
+  --color-text-dark: #111;
+  --color-text-light: #fff;
+  --color-shadow: rgba(255, 182, 193, 0.5);
+  --color-hover: #333;
+  --border-radius: 10px;
+}
+
 body {
   margin: 0;
-  font-family: "Great Vibes", cursive;
-  font-weight: 400; /* más fina */
-  font-size: 3.5rem; /* un poco más grande */
-  letter-spacing: 0.05em; /* separa un poco las letras */
-  line-height: 1.3; /* espacio vertical */
-  background-color: #ffb6c1;
-  color: #111;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 3.5rem;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  background-color: var(--color-bg);
+  color: var(--color-text-dark);
   scroll-behavior: smooth;
 }
 
-/* Portada */
 .portada {
+  width: 100%;
   height: 100vh;
-  position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffb6c1;
-  margin-top: 160px;
-  height: calc(100vh - 80px);
-  opacity: 0;
-  animation: fadeIn 2s ease forwards;
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
 .portada-img {
-  width: 100%;
-  max-width: 600px;
-  object-fit: cover;
-}
-
-/* Fecha con estilo */
-.fecha-container {
+  width: 100%; /* Ocupa todo el ancho */
+  height: auto; /* Ajusta automáticamente la altura para mantener la proporción */
+  max-height: 100vh; /* Limita la altura para que no exceda la pantalla */
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor */
   position: absolute;
-  top: calc(50% + 150px);
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta el punto de referencia */
+  z-index: -1;
+}
+
+.portada h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 3rem;
+  color: #000;
+  z-index: 1;
   text-align: center;
-  z-index: 10;
-  user-select: none;
+  padding: 1rem;
 }
 
-.titulo-cuando {
-  font-family: "Great Vibes", cursive;
-  font-size: 2.4rem;
-  color: #222;
-  margin-bottom: 5px;
-  text-shadow: 1px 1px 2px rgba(255, 182, 193, 0.5);
-}
-
-/* Sección de invitación */
+/* Invitación */
 .invitacion {
   padding: 40px 20px;
   text-align: center;
-  position: relative;
-  z-index: 9999;
+  z-index: 1;
 }
 
 .subtitulo {
   font-size: 1.5rem;
   margin-bottom: 30px;
-  font-family: "Great Vibes", cursive;
-  color: #222;
+  font-family: var(--font-primary);
+  color: var(--color-text-dark);
 }
 
 /* Contador */
@@ -76,22 +72,20 @@ body {
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 9999;
 }
 
 .unidad {
-  background-color: #111;
-  color: #fff;
+  background-color: var(--color-text-dark);
+  color: var(--color-text-light);
   width: 80px;
   height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  box-shadow: 0 6px 0 #333;
-  font-family: "Anton", sans-serif;
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 0 var(--color-hover);
+  font-family: var(--font-secondary);
   transition: transform 0.3s;
 }
 
